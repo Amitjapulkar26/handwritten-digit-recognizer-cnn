@@ -3,42 +3,28 @@
 A CNN-based deep learning application that recognizes handwritten digits (0–9) using the MNIST dataset.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" />
-  <img src="https://img.shields.io/badge/TensorFlow-Keras-orange?logo=tensorflow" />
-  <img src="https://img.shields.io/badge/Streamlit-Web%20App-FF4B4B?logo=streamlit" />
-  <img src="https://img.shields.io/badge/Deep%20Learning-CNN-success" />
-  <img src="https://img.shields.io/badge/Status-Deployed-brightgreen" />
+  <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/TensorFlow-Keras-orange?logo=tensorflow" alt="TensorFlow">
+  <img src="https://img.shields.io/badge/Streamlit-Web%20App-FF4B4B?logo=streamlit" alt="Streamlit">
+  <img src="https://img.shields.io/badge/Deep%20Learning-CNN-success" alt="Deep Learning">
+  <img src="https://img.shields.io/badge/Status-Deployed-brightgreen" alt="Deployed">
 </p>
+
+---
 
 ## 🚀 Live Demo
 
-**Try the application:** [Handwritten Digit Recognizer](YOUR_STREAMLIT_APP_URL)
+<p align="center">
+  <a href="https://handwritten-digit-recognizer-cnn-hfbbiyj9fqpdvzinffy863.streamlit.app/">
+    <strong>🌐 OPEN HANDWRITTEN DIGIT RECOGNIZER</strong>
+  </a>
+</p>
 
-Upload a PNG, JPG, or JPEG image containing one handwritten digit and view the predicted digit, confidence, and class probabilities.
-
-> Replace `YOUR_STREAMLIT_APP_URL` with your actual Streamlit Community Cloud application URL.
+Try the deployed application. Upload a PNG, JPG, or JPEG image containing one handwritten digit and view the predicted digit, confidence, and class probabilities.
 
 ## 📸 Project Screenshots
 
-Add screenshots of your actual running application to a folder named `screenshots` in this repository.
-
-<p align="center">
-  <img src="screenshots/home.png" width="85%" alt="Application interface" />
-  <br>
-  <em>Application Interface</em>
-</p>
-
-<p align="center">
-  <img src="screenshots/prediction.png" width="85%" alt="Prediction result" />
-  <br>
-  <em>Digit Prediction Result</em>
-</p>
-
-<p align="center">
-  <img src="screenshots/performance.png" width="85%" alt="Model performance" />
-  <br>
-  <em>Model Performance</em>
-</p>
+Screenshots of the actual application interface, digit prediction results, and model evaluation will be added here.
 
 ## 🎯 Project Overview
 
@@ -48,16 +34,23 @@ The application uses a **Convolutional Neural Network (CNN)** implemented with T
 
 An uploaded image is preprocessed to make it suitable for the model. The model then predicts the digit, and the application displays the prediction, confidence, class probabilities, and available test metrics.
 
-## ✨ Features
+## ✨ Key Features
 
 - TensorFlow/Keras CNN with convolution, pooling, dropout, and softmax classification.
-- Downloads MNIST automatically during training.
+- Automatically downloads the MNIST dataset during training.
 - Training, validation, and held-out test evaluation.
 - Upload PNG/JPG/JPEG handwritten digit images.
-- Image preprocessing: grayscale conversion, contrast normalization, thresholding, cropping, resizing, and centering.
-- Displays predicted digit and confidence.
+- Image preprocessing:
+  - Grayscale conversion
+  - Contrast normalization
+  - Thresholding
+  - Cropping
+  - Resizing
+  - Image centering
+- Displays the predicted digit and confidence.
 - Displays class probabilities and test metrics.
 - Interactive Streamlit user interface.
+- Deployed application accessible through a public web link.
 
 ## 🛠️ Tech Stack
 
@@ -66,14 +59,16 @@ An uploaded image is preprocessed to make it suitable for the model. The model t
 | Python 3.11 | Core programming language |
 | TensorFlow | Deep learning framework |
 | Keras | CNN model development and training |
-| NumPy | Numerical operations |
-| Pillow (PIL) | Image processing |
+| NumPy | Numerical and array operations |
+| Pillow (PIL) | Image processing and preprocessing |
 | Streamlit | Interactive web application |
 | MNIST | Handwritten digit dataset |
 
 ## 🧠 Model Architecture
 
 The project uses a Convolutional Neural Network (CNN) for image classification.
+
+### Main components
 
 - **Convolution layers:** Extract visual patterns and features from digit images.
 - **Pooling layers:** Reduce feature-map dimensions.
@@ -87,7 +82,7 @@ The project uses a Convolutional Neural Network (CNN) for image classification.
 2. Image preprocessing is performed.
 3. The processed image is passed to the trained CNN.
 4. The model predicts one of ten classes.
-5. The application displays the predicted digit and confidence.
+5. The application displays the predicted digit, confidence, and class probabilities.
 
 ```text
 Uploaded Handwritten Digit
@@ -110,14 +105,17 @@ Uploaded Handwritten Digit
 
 The model is evaluated using the held-out MNIST test dataset.
 
-| Metric | Result |
-|---|---:|
-| Test Accuracy | ADD ACTUAL VALUE |
-| Test Loss | ADD ACTUAL VALUE |
+| Evaluation Metric | Result |
+|---|---|
+| Test Accuracy | Refer to models/metrics.json |
+| Test Loss | Refer to models/metrics.json |
 | Dataset | MNIST |
+| Input Image Size | 28 × 28 pixels |
 | Output Classes | 10 (0–9) |
 
-**Note:** Replace the placeholders with the actual values from `models/metrics.json`. Do not use training accuracy as test accuracy.
+The actual evaluation values are generated by the training script and saved in `models/metrics.json`.
+
+**Note:** Model confidence for an individual prediction is different from overall test accuracy.
 
 ## 📚 Dataset
 
@@ -127,7 +125,7 @@ The MNIST dataset is loaded using:
 tensorflow.keras.datasets.mnist.load_data()
 ```
 
-Dataset details:
+### Dataset Details
 
 - 60,000 training images.
 - 10,000 test images.
@@ -136,7 +134,7 @@ Dataset details:
 
 The dataset is downloaded and cached automatically by Keras during the first training run.
 
-## ⚙️ Setup on Windows / VS Code
+## ⚙️ Installation and Setup on Windows / VS Code
 
 ### 1. Clone the repository
 
@@ -150,7 +148,9 @@ git clone https://github.com/Amitjapulkar26/handwritten-digit-recognizer-cnn.git
 cd handwritten-digit-recognizer-cnn
 ```
 
-Open this folder in VS Code. Select **Terminal → New Terminal**.
+Open this folder in VS Code.
+
+Go to **Terminal → New Terminal**.
 
 ### 3. Create a Python 3.11 virtual environment
 
@@ -173,7 +173,7 @@ pip install -r requirements.txt
 
 ### 6. Train the model
 
-The first training run downloads the MNIST dataset automatically.
+The first training run downloads MNIST automatically.
 
 ```powershell
 python train.py
@@ -190,7 +190,9 @@ After training, the following files are generated:
 streamlit run app.py
 ```
 
-A browser tab opens automatically. If it does not, visit:
+A browser tab opens automatically.
+
+If it does not, visit:
 
 `http://localhost:8501`
 
@@ -214,12 +216,11 @@ A browser tab opens automatically. If it does not, visit:
 │   └── metrics.json
 │
 └── screenshots/
-    ├── home.png
-    ├── prediction.png
-    └── performance.png
 ```
 
-The model and metrics files are generated after training. The screenshots folder contains the application screenshots added to GitHub.
+After training, `models/mnist_cnn.keras` and `models/metrics.json` are generated.
+
+The `screenshots` folder can contain images of the working application and model results.
 
 ## 🎥 Project Demonstration
 
@@ -247,7 +248,7 @@ This project helped me gain practical experience in image preprocessing, CNN tra
 ## ⚠️ Notes and Limitations
 
 - The model is trained on MNIST's writing style. Unusual handwriting, multiple digits, rotated images, shadows, and complex backgrounds can reduce accuracy.
-- Upload one digit per image. The app does not perform multi-digit OCR.
+- Upload one digit per image. The application does not perform multi-digit OCR.
 - The displayed confidence is the model's softmax probability, not a calibrated guarantee of correctness.
 - Training time depends on CPU/GPU availability. TensorFlow may run on CPU.
 
@@ -256,7 +257,8 @@ This project helped me gain practical experience in image preprocessing, CNN tra
 - Add a drawing canvas for direct browser input.
 - Improve recognition of unusual handwriting styles.
 - Extend the application to recognize multiple digits using an appropriate OCR pipeline.
-- Add more detailed model evaluation visualizations.
+- Add detailed model evaluation visualizations.
+- Improve robustness to real-world handwriting and different image backgrounds.
 
 ## 👨‍💻 Developer
 
@@ -270,7 +272,7 @@ AI & Machine Learning Engineering Student
 ---
 
 <p align="center">
-  **Built with Python, TensorFlow/Keras, CNN, and Streamlit.**
+  <strong>Built with Python, TensorFlow/Keras, CNN, and Streamlit.</strong>
   <br>
   If you find this project useful, consider giving the repository a ⭐.
 </p>
